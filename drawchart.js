@@ -33,7 +33,7 @@ function handleMouseOver(d, i) {
         .attr("y", cy - 15)
         .attr("fill", "grey")
         .style("font-size", "14px")
-        .text(name + ": " + val + " mg");	
+        .text(name + ": " + val);	
 }
 
 function handleMouseOut(d, i) {
@@ -44,6 +44,15 @@ function handleMouseOut(d, i) {
     var cy = d3.select(this).attr("cy");
 
     d3.select("#tooltip").remove();
+}
+
+function getMax(d, v) {
+    var max;
+    for (var i=0; i < d.length; i++) {
+        if (max == null || parseInt(d[i][v]) > parseInt(max[v]))
+            max = d[i];
+    }
+    return max;
 }
 
 // set the dimensions and margins of the graph
@@ -74,8 +83,9 @@ function drawChart(data, tabletop) {
     // scale the range of data in the domains
     x.domain(data.map(function(d) { return d.date; }));
     
-    var c = []; ranges.forEach((n) => c.push(Number(d3.max(data, function(d) { return d[n] }))));
-    y.domain([0, 900]); // d3.max(c)]);
+    var c = [];
+    ranges.forEach((n) => c.push(getMax(data, n)[n]));
+    y.domain([0, d3.max(c)]);
     
     // color scale function
     var colorScale = d3.scaleOrdinal().domain(ranges).range(d3.schemeTableau10);
