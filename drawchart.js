@@ -1,4 +1,4 @@
-var googleSheetURL = 'https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing'
+var googleSheetURL = document.getElementById("sheetsURL").value;
 // var googleSheetURL = 'https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit?usp=sharing';
 
 function init() {
@@ -72,6 +72,7 @@ var y = d3.scaleLinear()
 // moves the 'group' element to the top left margin
 var svg = d3.select("body").append("svg")
     .attr("class", "chart")
+    .attr("id", "chart")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
