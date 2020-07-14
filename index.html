@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Charts Anywhere</title>
+
+    <!-- load the d3.js library -->    
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <!-- load the tabletop library -->    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+
   </head>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -24,25 +32,24 @@
   </nav> 
 
   <body>
-    <div class="container-fluid ml-5 mt-5">
 
-      <input type="url" id="sheetsURL" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
+    <!-- <input type="url" id="sheetsURL" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing"> -->
 
-      <button  class="btn btn-primary" onclick="setupChart()">draw chart</button>
+    <!-- <button  class="btn btn-primary" onclick="setupChart()">draw chart</button> -->
 
-      <body>
+    <div id="input-class-container" class="mt-3 mx-5">
+      <div class="input-group">
+        <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" onclick="setupChart()">Generate!</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- load local javascript files -->
+    <script src="./drawchart.js"> </script>
+    <script src="./generatechart.js"> </script>
 
-        <!-- load the d3.js library -->    
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-        <!-- load the tabletop library -->    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-
-        <script src="./drawchart.js"> </script>
-        <script src="./generatechart.js"> </script>
-
-        <div id="js-container"><a id="js-text"></a></div>
-      </body> 
+    <div class="mx-5" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
   </body>
 </html>
