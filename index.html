@@ -24,9 +24,12 @@
   </nav> 
 
   <body>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid ml-5 mt-5">
+
       <input type="url" id="sheetsURL" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
+
       <button  class="btn btn-primary" onclick="setupChart()">draw chart</button>
+
       <body>
 
         <!-- load the d3.js library -->    
@@ -39,6 +42,7 @@
         <script src="./drawchart.js"> </script>
         <script src="./generatechart.js"> </script>
 
+        <div id="js-container"><a id="js-text"></a></div>
       </body> 
   </body>
 </html>
