@@ -33,13 +33,9 @@
 
   <body>
 
-    <!-- <input type="url" id="sheetsURL" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing"> -->
-
-    <!-- <button  class="btn btn-primary" onclick="setupChart()">draw chart</button> -->
-
     <div id="input-class-container" class="mt-3 mx-5">
       <div class="input-group">
-        <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" onclick="setupChart()">Generate!</button>
         </div>
@@ -49,7 +45,8 @@
     <!-- load local javascript files -->
     <script src="./drawchart.js"> </script>
     <script src="./generatechart.js"> </script>
-
+    
     <div class="mx-5" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
+    
   </body>
 </html>

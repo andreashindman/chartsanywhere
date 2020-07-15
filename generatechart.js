@@ -1,13 +1,16 @@
 function setupChart() {
-    // var googleSheetURL = document.getElementById("sheetsURL").value;
+    var googleSheetURL = document.getElementById("sheetsURL").value;
     // var googleSheetURL = 'https://docs.google.com/spreadsheets/d/1i2VsyFFcLQb-wC1nzh8sIKp70_yrns7rvj-H9myBDtg/edit?usp=sharing';
 
-    removeChart();
-    init();
+    removeContent();
+    
+    init(googleSheetURL);
     readTextFile("./drawChart.js");
 }
-function removeChart() {
-    console.log("This function should remove chart");
+
+function removeContent() {
+    document.getElementById("chart").innerHTML = "";
+    document.getElementById("js-text").innerHTML = "";
 }
 
 function addStringToPage(s) {
@@ -18,12 +21,11 @@ function addStringToPage(s) {
 function readTextFile(file) {
     var rawFile = new XMLHttpRequest();
     var allText;
-    rawFile.open("GET", file, false);
+    rawFile.open("GET", file);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
-                console.log(allText);
                 addStringToPage(allText);
             }
         }

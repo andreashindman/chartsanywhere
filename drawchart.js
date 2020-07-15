@@ -1,7 +1,5 @@
-var googleSheetURL = document.getElementById("sheetsURL").value;
-
-function init() {
-    Tabletop.init( { key: googleSheetURL, 
+function init(s) {
+    Tabletop.init( { key: s, 
                      callback: drawChart,
                      simpleSheet: true } );
 }
@@ -71,15 +69,15 @@ var y = d3.scaleLinear()
 // moves the 'group' element to the top left margin
 var svg = d3.select("body").append("svg")
     .attr("class", "chart")
-    .attr("id", "chart")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
+    .attr("id", "chart")
     .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
 function drawChart(data, tabletop) {
     var ranges = getColumns(data); // get name columns
-
+    
     // scale the range of data in the domains
     x.domain(data.map(function(d) { return d.date; }));
     
