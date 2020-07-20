@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -48,28 +48,14 @@
       </div>
     </div>
     
-    <!-- load local javascript files -->
+    <!-- load drawchart file -->
     <script src="./drawchart.js"> </script>
-    <script src="./generatechart.js"> </script>
     
     <div class="mx-5" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
-
-  <!--   <input type="file" name="inputfile" id="inputfile">  -->
-  <!--   <br>  -->
+    <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     
-  <!--   <pre id="output"></pre>  -->
-    
-  <!--   <script type="text/javascript"> -->
-  <!--     document.getElementById('inputfile').addEventListener('change', function() { -->
-        
-  <!--       var fr = new FileReader(); -->
-  <!--       fr.onload=function(){ -->
-  <!--           document.getElementById("js-text").textContent = fr.result; -->
-  <!--       } -->
-        
-  <!--       fr.readAsText(this.files[0]); -->
-  <!--   }) -->
-  <!--   </script> -->
+    <!-- load additional javascript files -->
+    <script src="./generatechart.js"></script>
   </body>
 
 </html>
