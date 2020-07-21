@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <style>
+      .chart {
+          display: flex;
+          margin: auto;
+      }
       /* Center the loader */
       #loader {
           position: absolute;
           left: 50%;
-          top: 50%;
+          top: 350px;
           z-index: 1;
           width: 150px;
           height: 150px;
@@ -71,7 +75,7 @@
   <body>
     
     
-    <div id="input-class-container" class="mt-3 mx-5">
+    <div id="input-class-container" class="mt-5 mx-5">
       <div class="input-group">
         <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
         <div class="input-group-append">
@@ -80,20 +84,21 @@
       </div>
     </div>
 
-    <div id="loader" style="display:none"> </div>
     
     <!-- load drawchart file -->
     <script src="./drawchart.js"></script>
-
+    
     <!-- javascript code display div -->
     <div id="js-text-container" style="display:none">
-
-      <div class="mx-5 border rounded" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
+      <div class="mx-5 border rounded" id="js-container"><pre class="mb-0 pre-scrollable" id="js-text"></pre></div>
     </div>
-    
+
     <!-- copy button -->
     <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     
+    
+    <div id="loader" style="display:none"> </div>
+
     <!-- load additional javascript files -->
     <script src="./generatechart.js"></script>
   </body>

@@ -69,6 +69,7 @@ var y = d3.scaleLinear()
 // moves the 'group' element to the top left margin
 var svg = d3.select("body").append("svg")
     .attr("class", "chart")
+    .attr("id", "chart-area")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -139,7 +140,7 @@ function drawChart(data, tabletop) {
     // add the y axis
     svg.append("g").call(d3.axisLeft(y));
 
-    // hide loader
+    // chartsanywhere.com specific code: hide loader
     document.getElementById('loader').style.display = "none";
 
 } 
