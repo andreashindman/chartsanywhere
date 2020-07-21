@@ -6,6 +6,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <style>
+      /* Center the loader */
+      #loader {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: 1;
+          width: 150px;
+          height: 150px;
+          margin: -75px 0 0 -75px;
+          border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid #3498db;
+          width: 120px;
+          height: 120px;
+          -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+      }
+
+      @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+      }
+
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+
+    </style>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -38,7 +69,8 @@
   </nav> 
 
   <body>
-
+    
+    
     <div id="input-class-container" class="mt-3 mx-5">
       <div class="input-group">
         <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
@@ -47,12 +79,15 @@
         </div>
       </div>
     </div>
+
+    <div id="loader" style="display:none"> </div>
     
     <!-- load drawchart file -->
     <script src="./drawchart.js"></script>
 
     <!-- javascript code display div -->
     <div id="js-text-container" style="display:none">
+
       <div class="mx-5 border rounded" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
     </div>
     

@@ -72,7 +72,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
-    .attr("id", "chart")
+    .attr("id", "draw-area")
     .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
 function drawChart(data, tabletop) {
@@ -138,4 +138,8 @@ function drawChart(data, tabletop) {
 
     // add the y axis
     svg.append("g").call(d3.axisLeft(y));
+
+    // hide loader
+    document.getElementById('loader').style.display = "none";
+
 } 
