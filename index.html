@@ -49,9 +49,14 @@
     </div>
     
     <!-- load drawchart file -->
-    <script src="./drawchart.js"> </script>
+    <script src="./drawchart.js"></script>
+
+    <!-- javascript code display div -->
+    <div id="js-text-container" style="display:none">
+      <div class="mx-5 border rounded" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
+    </div>
     
-    <div class="mx-5" id="js-container"><pre class="pre-scrollable" id="js-text"></pre></div>
+    <!-- copy button -->
     <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     
     <!-- load additional javascript files -->

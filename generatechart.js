@@ -8,6 +8,9 @@ function setupChart() {
     // draw chart
     init(googleSheetURL);
 
+    // show output text area div
+    document.getElementById('js-text-container').style.display = "block";
+
     // set the chart string, process it, and add to document
     addStringToPage(preprocessOutputCode(setChartString()));
 
@@ -18,12 +21,14 @@ function setupChart() {
     document.getElementById('copy-button').style.display = "block";
 }
 
+// remove chart, output text, and copy button
 function removeContent() {
     document.getElementById("chart").innerHTML = "";
     document.getElementById("js-text").textContent = "";
     document.getElementById('copy-button').style.display = "none";
 }
 
+// set text content of output JavaScript to s
 function addStringToPage(s) {
     document.getElementById("js-text").textContent = s;
 }
@@ -34,6 +39,7 @@ function preprocessOutputCode(s) {
     return js_beautify(s)
 }
 
+// set id: 'copy-button' to copy text
 function copyChartCode() {
     var btn = document.getElementById('copy-button')
     var clipboard = new ClipboardJS(btn);
