@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <style>
+      #js-text-container {
+          display: flex;
+          margin: auto;
+          max-width: 960px;
+      }
+      #input-class-container {
+          display: flex;
+          margin: auto;
+          max-width: 810px;
+      }
       .chart {
           display: flex;
           margin: auto;
@@ -15,7 +25,7 @@
       #loader {
           position: absolute;
           left: 50%;
-          top: 350px;
+          top: 360px;
           z-index: 1;
           width: 150px;
           height: 150px;
@@ -73,10 +83,8 @@
   </nav> 
 
   <body>
-    
-    
-    <div id="input-class-container" class="mt-5 mx-5">
-      <div class="input-group">
+    <div id="input-class-container">
+      <div class="input-group mt-5 mx-5">
         <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" onclick="setupChart()">Generate!</button>
@@ -91,10 +99,10 @@
     <!-- javascript code display div -->
     <div id="js-text-container" style="display:none">
       <div class="mx-5 border rounded" id="js-container"><pre class="mb-0 pre-scrollable" id="js-text"></pre></div>
+      <!-- copy button -->
+      <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     </div>
 
-    <!-- copy button -->
-    <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     
     
     <div id="loader" style="display:none"> </div>
