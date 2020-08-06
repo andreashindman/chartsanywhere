@@ -1,13 +1,13 @@
-#instructions-container {
+.instructions-container {
   display: flex;
   margin: auto;
   max-width: 1200px;
 }
-#instructions-container p {
+.instructions-container p {
   font-size: 1rem;
 }
 
-#js-text-container, #input-class-container {
+.js-text-container, .input-class-container {
   display: flex;
   margin: auto;
   max-width: 1200px;
@@ -19,7 +19,7 @@
 }
 
 /* Center the loader */
-#loader {
+.loader {
   position: absolute;
   left: 50%;
   top: 500px;

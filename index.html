@@ -38,13 +38,13 @@
 
   <body>
     
-    <div id="instructions-container">
+    <div class="instructions-container">
       <p class="mt-5 mx-5">
         Enter a Google Sheets URL in the input field below to generate an interactive visualization and the code required to embed your custom chart into any website. Ensure that sharing has been enabled (public editing is not required) and that the document has been published.<br><br>To generate a time series chart, the data source is required to include a date column. The remaining columns can have any name, but must contain numerical values.<br><br>Additional charts and options such as maps and custom colors coming soon. Stay tuned!
       </p>
     </div>
 
-    <div id="input-class-container">
+    <div class="input-class-container">
       <div class="input-group mt-5 mx-5">
         <input type="url" id="sheetsURL" class="form-control" value="https://docs.google.com/spreadsheets/d/1B2gUAFFKriAUPCntrVv5tUwfmnAwwRjwJ2PI4XR7pcw/edit?usp=sharing">
         <div class="input-group-append">
@@ -58,13 +58,13 @@
     <script src="./drawchart.js"></script>
     
     <!-- javascript code display div -->
-    <div id="js-text-container" style="display:none">
+    <div class="js-text-container" id="js-text-container" style="display:none">
       <div class="mx-5 border rounded" id="js-container"><pre class="mb-0 pre-scrollable" id="js-text"></pre></div>
       <!-- copy button -->
       <button class="m-5 btn btn-outline-secondary" id="copy-button" data-clipboard-target="#js-text" style="display:none">Copy code to clipboard</button>
     </div>
 
-    <div id="loader" style="display:none"></div>
+    <div class="loader" id="loader" style="display:none"></div>
 
     <!-- load additional javascript files -->
     <script src="./generatechart.js"></script>
