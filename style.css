@@ -7,6 +7,23 @@
   font-size: 1rem;
 }
 
+.options-container {
+  display: flex;
+  margin: auto;
+  max-width: 1200px;
+}
+.options-container .options-inner-container {
+  margin-left: 36px;
+}
+.options-container .option {
+  margin: 5px;
+}
+
+.bi {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .js-text-container, .input-class-container {
   display: flex;
   margin: auto;
