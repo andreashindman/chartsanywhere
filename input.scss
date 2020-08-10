@@ -1,23 +1,43 @@
 .instructions-container {
-  display: flex;
-  margin: auto;
-  max-width: 1200px;
+    display: flex;
+    margin: auto;
+    max-width: 1200px;
 
-  p {
-    font-size: 1rem;
-  }
+    p {
+        font-size: 1rem;
+    }
 }
 
 .options-container {
-  display: flex;
-  margin: auto;
-  max-width: 1200px;
-  .options-inner-container {
-      margin-left: 36px;
-  }
-  .option {
-      margin: 5px;
-  }
+    display: flex;
+    margin: auto;
+    max-width: 1200px;
+
+    .options-inner-container {
+        margin-left: 36px;
+    }
+
+    .option {
+        margin: 5px;
+    }
+
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+
+    .option:hover .tooltiptext {
+        visibility: visible;
+    }
 }
 
 .bi {
@@ -26,52 +46,52 @@
 }
 
 .js-text-container, .input-class-container {
-  display: flex;
-  margin: auto;
-  max-width: 1200px;
+    display: flex;
+    margin: auto;
+    max-width: 1200px;
 }
 
 .chart {
-  display: flex;
-  margin: auto;
+    display: flex;
+    margin: auto;
 }
 
 
 /* Center the loader */
 
 .loader {
-  position: absolute;
-  left: 50%;
-  top: 500px;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 8px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 8px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 1s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 500px;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
 
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
 
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
