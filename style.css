@@ -17,6 +17,7 @@
 }
 .options-container .option {
   margin: 5px;
+  position: relative;
 }
 .options-container .tooltiptext {
   visibility: hidden;
@@ -24,11 +25,24 @@
   background-color: black;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 3px;
   padding: 5px 0;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+.options-container .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 .options-container .option:hover .tooltiptext {
   visibility: visible;
